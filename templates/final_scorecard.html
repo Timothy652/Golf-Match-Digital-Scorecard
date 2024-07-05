@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Final Score</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="body">
+    <div class="container">
+        <h1>Final Score</h1>
+        <p>{{ session.p1_name }}'s Money: ${{ final_scores.p1_money }}</p>
+        <p>{{ session.p2_name }}'s Money: ${{ final_scores.p2_money }}</p>
+        
+        {% if final_scores.p1_money > final_scores.p2_money %}
+            <h1>{{ session.p1_name }} is the winner!</h1>
+            <p>{{session.p2_name}} owes {{ session.p1_name }} ${{ final_scores.p1_money | int - final_scores.p2_money | int}}</p>
+        {% elif final_scores.p2_money > final_scores.p1_money %}
+            <h1>{{ session.p2_name }} is the winner!</h1>
+            <p>{{session.p1_name}} owes {{ session.p2_name }} ${{ final_scores.p2_money | int - final_scores.p1_money | int}}</p>
+        {% else %}
+            <h1>It's a tie!</h1>
+        {% endif %}
+        
+        <a href="/new_game">Start New Game</a>
+    </div>
+</body>
+</html>
+

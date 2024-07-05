@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scorecard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="body">
+    <div class="container">
+        <a href="/" class="link">Set The Rules For Your Match</a>
+        <h1>Hole {{ current_hole }}</h1>
+        <form method="POST" action="/">
+            <div>
+                <label for="number_of_holes">How Many Holes Is the Match:</label>
+                <input type="number" id="number_of_holes" name="number_of_holes" required>
+            </div>
+            <div>
+                <label for="money_per_hole">How much is each hole worth:</label>
+                <input type="number" id="money_per_hole" name="money_per_hole" required>
+            </div>
+            <div>
+                <label for="money_per_birdie">How much is each birdie worth:</label>
+                <input type="number" id="money_per_birdie" name="money_per_birdie" required>
+            </div>
+            <div>
+                <label for="p1_name">Player/Team 1 Name:</label>
+                <input type="text" id="p1_name" name="p1_name" required>
+            </div>
+            <div>
+                <label for="p2_name">Player/Team 2 Name:</label>
+                <input type="text" id="p2_name" name="p2_name" required>
+            </div>
+            <button type="submit">Start Match</button>
+        </form>
+    </div>
+</body>
+</html>
+
