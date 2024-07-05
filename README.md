@@ -1,31 +1,30 @@
 Money Match Digital Scorecard Application
+Video Demo: <URL HERE>
+This Flask application enables users to manage a golf match between two players or teams, focusing on tracking financial bets alongside scores. It offers robust features:
 
-#### Video Demo: <URL HERE>
+Features:
+Setting Up the Match: Define the number of holes, set values for each hole and birdie, and input player/team names.
 
-This Flask application allows users to keep track of a golf match between two players or teams. It supports the following features:
+Score Entry: Input par and scores for each hole per player/team. Calculates money earned per hole and birdie.
 
-Setting Up the Match: Users can set the number of holes, specify how much each hole and birdie are worth, and enter the names of the players or teams.
+Game Progression: Automatically moves to the next hole after each round until all holes are complete.
 
-Score Entry: For each hole, users can input the par and scores for each player/team. Based on the scores, the application calculates money earned per hole and per birdie for each player/team.
-
-Game Progression: After each hole, the application automatically progresses to the next hole until all holes are completed.
-
-Final Score Display: Once all holes are completed, the application displays the final scores and declares the winner. It also calculates any owed money between the players/teams based on their final scores.
+Final Score Display: Shows final scores and declares the winner. Calculates owed money based on scores.
 
 Files Included:
-app.py: Contains the Flask application code.
-style.css: Stylesheet for the HTML templates.
-rules.html: Template for setting up the match rules.
-scorecard.html: Template for entering scores for each hole.
-final_scorecard.html: Template for displaying the final scores and declaring the winner.
+app.py: Flask application code.
+style.css: Stylesheet for HTML templates.
+rules.html: Template for match setup.
+scorecard.html: Template for score entry.
+final_scorecard.html: Template displaying final scores.
 Usage:
 Clone the repository.
-Install the necessary dependencies (Flask and Flask-Session).
-Run python app.py to start the Flask development server.
+Install dependencies (Flask and Flask-Session).
+Run python app.py to start the Flask server.
 Access the application at http://localhost:5000.
 Requirements:
 Python 3.x
 Flask
 Flask-Session
 Note:
-This application uses Flask-Session to manage session variables for maintaining game state across requests.
+Uses Flask-Session for managing session variables to maintain game state.
